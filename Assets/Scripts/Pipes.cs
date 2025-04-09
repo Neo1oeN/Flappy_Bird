@@ -13,6 +13,7 @@ public class Pipes : MonoBehaviour
         transform.position += Vector3.left * speed * Time.deltaTime;
         if (transform.position.x < leftEdge)
         {
+            
             Destroy(gameObject);
         }
     }

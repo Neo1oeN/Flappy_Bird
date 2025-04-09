@@ -6,13 +6,13 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public GameObject playButton;
     public GameObject gameOver;
-    private Player player;
+    public Player Player;
 
 
     private int score;
     private void Awake()
     {
-        player  = FindFirstObjectByType<Player>();
+        Player  = FindFirstObjectByType<Player>();
         Pause();
 
     }
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         gameOver.SetActive(false);
 
         Time.timeScale = 1.0f;
-        player.enabled = true;
+        Player.enabled = true;
 
         Pipes[] pipes = FindObjectsOfType<Pipes>();
 
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0f;
-        player.enabled = false;
+        Player.enabled = false;
     }
 
     public void IncreaseScore()
@@ -48,8 +48,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Pause();
+        
         gameOver.SetActive(true);
         playButton.SetActive(true);
+        
+        Pause();
     }
 }
