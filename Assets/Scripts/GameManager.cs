@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         Player  = FindFirstObjectByType<Player>();
         Pause();
+        gameOver.SetActive(false);
 
     }
     public void Play()
