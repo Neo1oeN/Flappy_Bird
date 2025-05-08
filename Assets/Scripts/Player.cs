@@ -14,17 +14,21 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        // Debug.Log("I am awake");
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
+        // Debug.Log("is am just waking up");
         // InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
     }
 
     private void OnEnable()
     {
-        Vector3 position = transform.position;
+
+        Vector3 position;
+        position = transform.position;
         position.y = 0f;
         transform.position = position;
         direction = Vector3.zero;
